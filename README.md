@@ -2,6 +2,5 @@
 
 Proyecto Cacharitos Rent a Car
 
-José Antonio Gallegos
-Cambios realizados por José Antonio Gallegos
+José Antonio Gallegos - Cambios realizados por José Antonio Gallegos
 
