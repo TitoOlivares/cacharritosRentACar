@@ -6,3 +6,6 @@ José Antonio Gallegos - Cambios realizados por José Antonio Gallegos
 
 Tito Olivares
 -Cambios realizados por Tito Olivares
+
+Felipe Astudillo
+-Cambios realizados por Felipe Astudillo
