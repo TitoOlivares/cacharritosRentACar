@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -10,3 +11,7 @@ def vehiculos(request):
 
 def contacto(request):
     return render(request, 'core/contacto.html')
+
+@login_required
+def arriendos(request):
+    return render(request, 'core/arriendo.html')

@@ -14,9 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 
-urlpatterns = [    
-    path('', include('core.urls')),
+urlpatterns = [        
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
+
+#Personalizar titulos de administrador
+admin.site.site_header = "Administración del Rent a Car"
+admin.site.index_title = "Cacharritos Rent a Car"
+admin.site.site_title = "Administración del Sitio"
