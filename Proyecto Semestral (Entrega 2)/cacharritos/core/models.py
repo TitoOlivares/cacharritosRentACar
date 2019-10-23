@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 # Create your models here.
 
 class Marca(models.Model):
@@ -20,3 +22,6 @@ class Automovil(models.Model):
     class Meta:
         verbose_name = "Automovil"
         verbose_name_plural = "Automoviles"
+
+
+
