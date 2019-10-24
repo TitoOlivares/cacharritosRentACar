@@ -70,7 +70,14 @@ body {
 
 
 
+.contenedor input[type="password"], input[type="text"], input[type="label"] {
+    margin-top: 10px;
+    margin-left: 10px;
+}
 
+.contenedor input[type="password"], input[type="text"]{
+    padding-left: 5px;
+}
 
 
 .contenedor .boton input[type="reset"],.boton input[type="submit"] {
@@ -85,6 +92,7 @@ body {
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
+    margin-left: 100px;
 }
 
 .contenedor .helptext{
