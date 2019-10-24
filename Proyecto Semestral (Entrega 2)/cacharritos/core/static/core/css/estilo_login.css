@@ -80,7 +80,7 @@ body {
 }
 
 
-.contenedor .boton input[type="reset"],.boton input[type="submit"] {
+.contenedor .boton input[type="reset"],.boton input[type="submit"], button {
     border: 0;
     margin-top: 15px;
     padding: 10px;

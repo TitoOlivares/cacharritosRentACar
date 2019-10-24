@@ -24,7 +24,6 @@
             {% if user.is_authenticated %}
             <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
             <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
-            
             {% endif %}
         </nav>
     </div>
@@ -39,7 +38,7 @@
         <table>
            {{ form.as_table }}
         </table>
-               
+  
             
 
             <div class="boton">
