@@ -19,6 +19,9 @@ def contacto(request):
 def arriendos(request):
     return render(request, 'core/arriendo.html')
 
+def admin(request):
+    return render(request,'admin')
+
 def registro_usuario (request):
     data= {
         'form':CustomUserForm()
