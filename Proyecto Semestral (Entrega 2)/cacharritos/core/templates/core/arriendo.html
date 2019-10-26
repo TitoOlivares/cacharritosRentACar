@@ -4,35 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Home - Cacharritos Rent a Car</title>
+    <title>Arriendos - Cacharritos Rent a Car</title>
     {%load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'core/css/estilo_index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/estilo_arriendo.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
+
 </head>
+
+<header>
+    <div class="contenedor">
+        <img src="{% static 'core/img/logo2.png' %}" alt="logo" id="logo">
+        <input type="checkbox" id="barra-menu">
+        <label class="icon-menu" for="barra-menu"></label>
+        <nav class="menu">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'arriendos' %}">Arriendos</a>
+            <a href="{% url 'vehiculos' %}">Veh&iacute;culos</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
+            {% if user.is_authenticated %}
+            <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
+            {% if user.is_staff %}
+            <a href="{% url 'admin' %}">Administraci&oacute;n</a>
+            {% endif %}
+            <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
+            {%else%}
+            <a href="{% url 'login' %}">Iniciar Sesi&oacute;n</a>
+            <a href="{% url 'Registro_usuario' %}">Registro</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>
 
 
 <body>
-    <header>
-        <div class="contenedor">
-             <img src="{% static 'core/img/logo2.png' %}" alt="logo" id="logo">
-            <input type="checkbox" id="barra-menu">
-            <label class="icon-menu" for="barra-menu"></label>
-            <nav class="menu">
-                <a href="{% url 'home' %}">Inicio</a>
-                <a href="{% url 'arriendos' %}">Arriendos</a>
-                <a href="{% url 'vehiculos' %}">Veh&iacute;culos</a>
-                <a href="{% url 'contacto' %}">Contacto</a>
-                {% if user.is_authenticated %}
-                <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
-                    {% if user.is_staff %}
-                        <a href="{% url 'admin' %}">Administraci&oacute;n</a>
-                    {% endif %}
-                <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
-                {%else%}
-                <a href="{% url 'login' %}">Iniciar Sesi&oacute;n</a>               
-                <a href="{% url 'Registro_usuario' %}">Registro</a>
-                {% endif %}
-            </nav>
-        </div>
-    </header>
+
+
+    <div class="form-arriendo">
+
+        <h2>SOLICITUD DE ARRIENDO</h2>
+
+        <form action="" method="POST" class="arriendo-form">
+            {% csrf_token %}
+            <table>
+
+                {{form.as_table}}
+
+            </table>
+
+            <div class="boton">
+                <input type="submit" value="Ingresar Solicitud">
+            </div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+
+    </div>
+
 </body>
+
+<footer>
+    <div class="contenedor-rrss">
+        <p class="copyright">Cacharritos Rent a Car Chile &copy; 2019</p>
+    </div>
+</footer>
+
+</html>

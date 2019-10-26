@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Marca, Automovil
+from .models import Marca, Automovil, Arriendo
 
 # Register your models here.
 
@@ -10,3 +10,4 @@ class AutomovilAdmin(admin.ModelAdmin):
 
 admin.site.register(Marca)
 admin.site.register(Automovil, AutomovilAdmin)
+admin.site.register(Arriendo)
