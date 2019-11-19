@@ -37,11 +37,11 @@ header .contenedor-menu {
 }
 
 /* CCS Formulario */
-
 body {
     margin: 0;
     padding: 0;
     background: #084B8A;
+    margin-bottom: 30%;
 }
 
 .contenedor {
@@ -53,7 +53,9 @@ body {
     background: #FFFFFF;
     padding: 25px;
     margin-bottom: 15px;
-    border-radius: 5px;   
+    margin-top: 35px;
+    border-radius: 5px;
+    font-size: 13px; 
     
 }
 
@@ -66,15 +68,15 @@ body {
     color: #332902;    
 }
 
-.contenedor input[type="password"], input[type="text"], input[type="label"] {
+.contenedor input[type="text"], input[type="password"], input[type="email"]   {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 10px;    
+    width: 100%;
 }
 
-.contenedor input[type="password"], input[type="text"]{
-    padding-left: 5px;
+.contenedor .helptext{
+    display: none;
 }
-
 
 .contenedor .boton input[type="reset"],.boton input[type="submit"], button {
     border: 0;
@@ -91,16 +93,6 @@ body {
     margin-left: 100px;
 }
 
-.contenedor .helptext{
-    display: none;
-}
-
-.reset{
-    float: inline-end;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: right;
-}
 
 
 
