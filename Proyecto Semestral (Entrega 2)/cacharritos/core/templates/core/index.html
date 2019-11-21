@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <div class="contenedor">
+        <div class="contenedor-menu">
             <img src="{% static 'core/img/logo2.png' %}" alt="logo" id="logo">
             <input type="checkbox" id="barra-menu">
             <label class="icon-menu" for="barra-menu"></label>
@@ -26,6 +26,7 @@
                     <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
                     {% if user.is_staff %}
                     <a href="{% url 'admin' %}">Administraci&oacute;n</a>
+                    <a href="{% url 'listado' %}">Solicitudes</a>
                     {% endif %}
                     <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
                     

@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Contacto - Cacharritos Rent a Car</title>
+    <title>Listado de Solicitudes - Cacharritos Rent a Car</title>
     {%load static %}
-    <link rel="stylesheet" href="{% static 'core/css/estilo_contacto.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/estilo_arriendo.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
     <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <header>
-    <div class="contenedor-menu">
+   <div class="contenedor-menu">
         <img src="{% static 'core/img/logo2.png' %}" alt="logo" id="logo">
         <input type="checkbox" id="barra-menu">
         <label class="icon-menu" for="barra-menu"></label>
@@ -24,7 +25,6 @@
             <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
                 {% if user.is_staff %}
                     <a href="{% url 'admin' %}">Administraci&oacute;n</a>
-                    <a href="{% url 'listado' %}">Solicitudes</a>
                 {% endif %}
             <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
             {%else%}
@@ -36,30 +36,44 @@
 </header>
 
 <body>
-    <div class="contenedor">
-        <h2>Formulario de Contacto</h2>
-        <div id="mensaje_error"></div>
+  <div class= "contenedor">
 
-        <form id="miformulario" onsubmit="return validacion()">
-            <div class="campo_ingreso">
-                <input type="text" placeholder="Nombre" id="nombre" required>
-            </div>
-            <div class="campo_ingreso">
-                <input type="text" placeholder="Asunto" id="asunto" required>
-            </div>
-            <div class="campo_ingreso">
-                <input type="text" placeholder="Tel&eacute;fono" id="telefono" required>
-            </div>
-            <div class="campo_ingreso">
-                <input type="email" placeholder="Correo" id="correo" required>
-            </div>
-            <div class="campo_ingreso">
-                <textarea placeholder="Mensaje" id="mensaje" required></textarea>
-            </div>
-            <div class="boton">
-                <input type="submit" value="Enviar">
-            </div>
-        </form>
+        <h2> Listado de arriendos </h2>
+        <table>
+            <tr class = "titulo">
+                <th> Nombre</th>
+                <th> Apellido </th>
+                <th> Usuario</th>
+                <th> Rut</th>
+                <th> Auto </th>
+                <th> Duración arriendo </th>
+                <th> Correo </th>
+                <th> Número </th>
+                <th> Opciones</th>
+            </tr>
+
+            {%for a in arriendos  %}
+                <tr class= "columna">
+                    <td>{{a.nombre_completo}}  </td>  
+                    <td>{{a.correo}}  </td> 
+                    <td>{{a.direccion}}  </td> 
+                    <td>{{a.telefono}}  </td> 
+                    <td>{{a.marca}}  </td> 
+                    <td>{{a.modelo}}  </td> 
+                    <td>{{a.fecha_arriendo}}  </td> 
+                    <td>{{a.fecha_devolucion}}  </td> 
+                    <td>{{a.estado}}  </td>
+                    <td>
+                        <a href="{% url 'modificar_Arriendo' a.id %}">Modificar</a>
+                        <a href="#" onclick="confirmarEliminacion({{a.id}})"> Eliminar </a>
+                    </td>
+                
+                </tr>
+            {% endfor %}
+
+
+        </table>
+
     </div>
 
     <footer>
@@ -73,4 +87,5 @@
             <p class="copyright">Cacharritos Rent a Car Chile &copy; 2019</p>
         </div>
     </footer>
+    <script src="{% static 'core/js/confirmar_elim.js' %}"></script>
 </body></html>

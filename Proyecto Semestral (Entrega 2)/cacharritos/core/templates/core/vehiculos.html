@@ -23,6 +23,7 @@
             <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
                 {% if user.is_staff %}
                     <a href="{% url 'admin' %}">Administraci&oacute;n</a>
+                    <a href="{% url 'listado' %}">Solicitudes</a>
                 {% endif %}
             <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
             {%else%}

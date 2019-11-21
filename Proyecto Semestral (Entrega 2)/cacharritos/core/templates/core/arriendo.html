@@ -12,7 +12,7 @@
 </head>
 
 <header>
-    <div class="contenedor">
+  <div class="contenedor-menu">
         <img src="{% static 'core/img/logo2.png' %}" alt="logo" id="logo">
         <input type="checkbox" id="barra-menu">
         <label class="icon-menu" for="barra-menu"></label>
@@ -23,12 +23,13 @@
             <a href="{% url 'contacto' %}">Contacto</a>
             {% if user.is_authenticated %}
             <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
-            {% if user.is_staff %}
-            <a href="{% url 'admin' %}">Administraci&oacute;n</a>
-            {% endif %}
+                {% if user.is_staff %}
+                    <a href="{% url 'admin' %}">Administraci&oacute;n</a>
+                    <a href="{% url 'listado' %}">Solicitudes</a>
+                {% endif %}
             <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
             {%else%}
-            <a href="{% url 'login' %}">Iniciar Sesi&oacute;n</a>
+            <a href="{% url 'login' %}">Iniciar Sesi&oacute;n</a>               
             <a href="{% url 'Registro_usuario' %}">Registro</a>
             {% endif %}
         </nav>
@@ -39,7 +40,7 @@
 <body>
 
 
-    <div class="form-arriendo">
+    <div class="contenedor">
 
         <h2>SOLICITUD DE ARRIENDO</h2>
 
@@ -57,7 +58,7 @@
             {% if messages %}
             <ul class="messages">
                 {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                <li>{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
                     {% endfor %}
             </ul>
             {% endif %}
@@ -65,12 +66,18 @@
 
     </div>
 
+    <footer>
+        <div class="contenedor-rrss">
+            <p class="copyright">Cacharritos Rent a Car Chile &copy; 2019</p>
+        </div>
+    </footer>
+
+
+
+
+
 </body>
 
-<footer>
-    <div class="contenedor-rrss">
-        <p class="copyright">Cacharritos Rent a Car Chile &copy; 2019</p>
-    </div>
-</footer>
+
 
 </html>

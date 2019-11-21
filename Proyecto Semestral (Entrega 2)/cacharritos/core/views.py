@@ -72,3 +72,34 @@ class CustomUserForm(UserCreationForm):
         model = User 
         fields = ['first_name', 'last_name','email','username','password1','password2']
 
+def listado(request):
+    
+    arriendos = Arriendo.objects.all() ##
+    data={
+
+        'arriendos':arriendos
+    }
+
+    return render(request, 'core/listado_solicitudes.html',data)
+
+
+def modificar_Arriendo(request,id):
+    arriendo=Arriendo.objects.get(id=id)
+    data={
+        'form':ArriendoForm(instance=arriendo)
+    }
+
+    if request.method == 'POST':
+        formulario = ArriendoForm(data= request.POST,instance=arriendo)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Actualizado Correctamente"
+            data['form'] = formulario
+
+    return render(request,'core/actualizar_arriendo.html', data)
+
+
+def eliminar (request,id):
+    arriendo = Arriendo.objects.get(id=id)
+    arriendo.delete()
+    return redirect (to="listado")     

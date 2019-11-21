@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Contacto - Cacharritos Rent a Car</title>
+    <title>Admin. Arriendos - Cacharritos Rent a Car</title>
     {%load static %}
-    <link rel="stylesheet" href="{% static 'core/css/estilo_contacto.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/estilo_arriendo.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
-    <script src="{% static 'core/js/script.js' %}"></script>
+
 </head>
 
 <header>
-    <div class="contenedor-menu">
+  <div class="contenedor-menu">
         <img src="{% static 'core/img/logo2.png' %}" alt="logo" id="logo">
         <input type="checkbox" id="barra-menu">
         <label class="icon-menu" for="barra-menu"></label>
@@ -35,42 +36,48 @@
     </div>
 </header>
 
-<body>
-    <div class="contenedor">
-        <h2>Formulario de Contacto</h2>
-        <div id="mensaje_error"></div>
 
-        <form id="miformulario" onsubmit="return validacion()">
-            <div class="campo_ingreso">
-                <input type="text" placeholder="Nombre" id="nombre" required>
-            </div>
-            <div class="campo_ingreso">
-                <input type="text" placeholder="Asunto" id="asunto" required>
-            </div>
-            <div class="campo_ingreso">
-                <input type="text" placeholder="Tel&eacute;fono" id="telefono" required>
-            </div>
-            <div class="campo_ingreso">
-                <input type="email" placeholder="Correo" id="correo" required>
-            </div>
-            <div class="campo_ingreso">
-                <textarea placeholder="Mensaje" id="mensaje" required></textarea>
-            </div>
+<body>
+
+
+    <div class="contenedor">
+
+        <h2>ADMINISTRADOR DE SOLICITUDES DE ARRIENDO</h2>
+
+        <form action="" method="POST" class="arriendo-form">
+            {% csrf_token %}
+            <table>
+
+                {{form.as_table}}
+
+            </table>
+
             <div class="boton">
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Actualizar Solicitud">
             </div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
         </form>
+
     </div>
 
     <footer>
         <div class="contenedor-rrss">
-            <div class="sociales">
-                <a class="rrss icon-facebook" href="http://www.facebook.com"></a>
-                <a class="rrss icon-instagram" href="http://www.instagram.com"></a>
-                <a class="rrss icon-twitter" href="http://www.twitter.com"></a>
-                <a class="rrss icon-mail-alt" href="https://www.gmail.com"></a>
-            </div>
             <p class="copyright">Cacharritos Rent a Car Chile &copy; 2019</p>
         </div>
     </footer>
-</body></html>
+
+
+
+
+
+</body>
+
+
+
+</html>
