@@ -66,13 +66,17 @@ body {
     color: #332902;    
 }
 
+.contenedor input[type="password"], input[type="text"], input[type="label"] {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.contenedor input[type="password"], input[type="text"]{
+    padding-left: 5px;
+}
 
 
-
-
-
-
-.contenedor .boton input[type="submit"] {
+.contenedor .boton input[type="reset"],.boton input[type="submit"], button {
     border: 0;
     margin-top: 15px;
     padding: 10px;
@@ -84,11 +88,19 @@ body {
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
+    margin-left: 100px;
 }
 
+.contenedor .helptext{
+    display: none;
+}
 
-
-
+.reset{
+    float: inline-end;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: right;
+}
 
 
 

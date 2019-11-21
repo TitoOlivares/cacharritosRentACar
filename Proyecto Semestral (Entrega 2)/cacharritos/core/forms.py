@@ -10,26 +10,30 @@ class CustomUserForm (UserCreationForm):
     class Meta:
         model = User
         fields = [
-            'first_name',
+            'username',
             'last_name',
             'email',
-            'username',
+            'first_name',
             'password1',
             'password2'
         ]
+        
 
-class Arriendoform(ModelForm):
+class ArriendoForm (forms.ModelForm):
+    
     class Meta:
-
         model = Arriendo
-        fields =[
-            'nombre',
-            'apellido',
-            'rut',
-            'telefono',
+        fields = [
+            'nombre_completo',
             'correo',
-            'tarjeta',
-            'duracion',
-            'usuario',
-            'auto'
+            'direccion',
+            'telefono',
+            'marca',
+            'modelo',
+            'fecha_arriendo',
+            'fecha_devolucion',
         ]
+        widgets = {
+            'fecha_arriendo' : forms.DateInput(attrs={'type':'date','id':'fecha_arriendo'}),
+            'fecha_devolucion' : forms.DateInput(attrs={'type':'date','id':'fecha_devolucion'})
+        }

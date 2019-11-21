@@ -237,7 +237,7 @@ footer p {
         position: relative;
         width: 350px;
         height: 300px;
-        margin: 20px 40px;
+        margin: 20px auto;
     }
     
     .contenedor-info h2 {
