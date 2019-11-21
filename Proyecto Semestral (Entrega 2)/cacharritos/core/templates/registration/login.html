@@ -21,7 +21,7 @@
             <a href="{% url 'vehiculos' %}">Veh&iacute;culos</a>
             <a href="{% url 'contacto' %}">Contacto</a>
             {% if user.is_authenticated %}
-            <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
+            <a href="#">Usuario: {{ user.username }}</a>
             <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
             {% endif %}
         </nav>
@@ -39,14 +39,7 @@
 
         </table>
         <div class="boton">
-            <input  type="submit" value="Login">
-            <a href="{% url 'Registro_usuario' %}"><button>Crear cuenta</button></a>
-            <div class="reset">
-                <p>¿Olvidaste tu contrase&ntilde;a?</p>
-                <a href="{% url 'password_reset' %}">Recup&eacute;rala aqu&iacute;</a>
-            </div>
-            
-
+            <input  type="submit" value="Login"  >
         </div>
         
     </form>

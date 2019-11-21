@@ -1,7 +1,5 @@
 from django.db import models
-from django.utils import timezone
-from django import forms
-
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -25,15 +23,19 @@ class Automovil(models.Model):
         verbose_name = "Automovil"
         verbose_name_plural = "Automoviles"
 
+
 class Arriendo(models.Model):
-    nombre_completo = models.CharField(max_length=100)
-    correo = models.EmailField()
-    direccion = models.CharField(max_length=100)
-    telefono = models.CharField(default='', max_length=9)
-    marca = models.CharField(max_length=20)
-    modelo = models.CharField(max_length=20)
-    fecha_arriendo = models.DateField(blank=False)
-    fecha_devolucion = models.DateField(blank=False)
-    estado = models.CharField(default='Pendiente', max_length=20)
-
-
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    rut = models.CharField(max_length=10)
+    telefono=models.IntegerField()
+    correo = models.CharField(max_length=250)
+    tarjeta = models.IntegerField()
+    duracion = models.IntegerField()
+    usuario = models.ForeignKey(User,on_delete=models.CASCADE)
+    auto = models.ForeignKey(Automovil,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nombre
+    class Meta:
+        verbose_name = "Arriendo"
+        verbose_name_plural = "Arriendos"
