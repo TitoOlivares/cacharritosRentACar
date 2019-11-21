@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Listado de Arriendos - Cacharritos Rent a Car</title>
+    <title>Solicitud Arriendo - Cacharritos Rent a Car</title>
     {%load static %}
-    <link rel="stylesheet" href="{% static 'core/css/estilo_arriendo.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/estilo_contacto.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
     <script src="{% static 'core/js/script.js' %}"></script>
 </head>
@@ -29,38 +29,14 @@
 </header>
 
 <body>
-  <div class= "contenedor">
+    <div class="contenedor">
+        <h2>Formulario de Arriendo</h2>
+        <div id="mensaje_error"></div>
+        <form action = "" method = "POST">
+            {{ form }}
 
-        <h2> Listado de arriendos </h2>
-        <table>
-            <tr class = "titulo">
-                <th> Nombre</th>
-                <th> Apellido </th>
-                <th> Usuario</th>
-                <th> Rut</th>
-                <th> Auto </th>
-                <th> Duración arriendo </th>
-                <th> Correo </th>
-                <th> Número </th>
-            </tr>
-
-            {%for a in arriendos  %}
-                <tr class= "columna">
-                    <td>{{a.nombre}}  </td>  
-                    <td>{{a.apellido}}  </td> 
-                    <td>{{a.usuario}}  </td> 
-                    <td>{{a.rut}}  </td> 
-                    <td>{{a.auto}}  </td> 
-                    <td>{{a.duracion}}  </td> 
-                    <td>{{a.correo}}  </td> 
-                    <td>{{a.telefono}}  </td> 
-                
-                </tr>
-            {% endfor %}
-
-
-        </table>
-
+        </form>
+        
     </div>
 
     <footer>

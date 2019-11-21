@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Contacto - Cacharritos Rent a Car</title>
     {%load static %}
-    <link rel="stylesheet" href="{% static 'core/css/estilo_registro.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/estilo_login.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
     <script src="{% static 'core/js/script.js' %}"></script>
 </head>
@@ -21,12 +20,11 @@
             <a href="{% url 'arriendos' %}">Arriendos</a>
             <a href="{% url 'vehiculos' %}">Veh&iacute;culos</a>
             <a href="{% url 'contacto' %}">Contacto</a>
-
+            
             {% if user.is_authenticated %}
-            <a href="#">Usuario: {{ user.first_name }} {{ user.last_name }}</a>
+            <a href="#">Usuario: {{ user.username }}</a>
             <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
-            {% else %}
-            <a href="{% url 'login' %}">Iniciar Sesi&oacute;n</a>
+            
             {% endif %}
         </nav>
     </div>
@@ -34,31 +32,20 @@
 
 <body>
     <div class="contenedor">
-        <h2>Registro de usuario</h2>
-        <form action="" method="POST">
-            {% csrf_token %}
+       <h2>Registro de usuario</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
 
-            <table>
-                {{ form.as_table }}
-            </table>
+        <table>
+           {{ form.as_table }}
+        </table>
 
-
-
-            <div class="boton">
-
-                <input type="submit" value="Registrar">
-                <input type="reset" value="Limpiar">
-            </div>
-
-        </form>
-
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
+        
+        <div class="boton">
+            <input  type="reset" value="Limpiar"  >
+            <input  type="submit" value="registrar"  >
+        </div>
+    </form>
     </div>
 
     <footer>
@@ -72,6 +59,4 @@
             <p class="copyright">Cacharritos Rent a Car Chile &copy; 2019</p>
         </div>
     </footer>
-</body>
-
-</html>
+</body></html>
