@@ -14,12 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path,re_path, include
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+
 
 urlpatterns = [        
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+
+    path('password_reset', PasswordResetView.as_view(), name='password_reset'),
+    path('password_reset_done', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    re_path(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$', 
+        PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('done', PasswordResetCompleteView.as_view(), name='password_reset_complete'),    
 ]
 
 #Personalizar titulos de administrador

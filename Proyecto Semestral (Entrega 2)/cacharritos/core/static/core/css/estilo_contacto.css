@@ -42,6 +42,7 @@ body {
     margin: 0;
     padding: 0;
     background: #084B8A;
+    margin-bottom: 30%;
 }
 
 .contenedor {
@@ -53,6 +54,7 @@ body {
     background: #FFFFFF;
     padding: 25px;
     margin-bottom: 15px;
+    margin-top: 35px;
     border-radius: 5px;   
     
 }
@@ -75,11 +77,11 @@ body {
 .contenedor textarea{
     width: 100%;
     border: 1px solid #E0E0E0;
-    padding: 10px;    
+    padding: 10px;  
 }
 
 .contenedor textarea {
-    height: 80px;
+    height: 70px;
     resize: none;
 }
 
@@ -102,7 +104,6 @@ body {
     padding: 0px;
     background: #e81910;
     color: #e8e510;
-    font-weight: bold;
     text-align: center;
     font-size: 14px;
     transition: all 0.5s ease;    
