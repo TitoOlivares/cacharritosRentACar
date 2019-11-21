@@ -42,25 +42,22 @@ body {
     margin: 0;
     padding: 0;
     background: #084B8A;
-    margin-bottom: 30%;
 }
 
-.contenedor {
+.table-responsive-sm {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 450px;
+    width: 90%;
     background: #FFFFFF;
     padding: 25px;
     margin-bottom: 15px;
-    margin-top: 35px;
-    border-radius: 5px;
-    font-size: 14px;  
+    border-radius: 5px;   
     
 }
 
-.contenedor h2 {
+.table-responsive-sm h2 {
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;    
@@ -69,24 +66,24 @@ body {
     color: #332902;    
 }
 
-.contenedor .campo_ingreso {
+.table-responsive-sm .campo_ingreso {
     margin-bottom: 10px;
 }
 
-.contenedor .campo_ingreso input[type="text"],
-.contenedor .campo_ingreso input[type="email"],
-.contenedor textarea{
+.table-responsive-sm .campo_ingreso input[type="text"],
+.table-responsive-sm .campo_ingreso input[type="email"],
+.table-responsive-sm textarea{
     width: 100%;
     border: 1px solid #E0E0E0;
-    padding: 10px;
+    padding: 10px;    
 }
 
-.contenedor textarea {
-    height: 70px;
-    resize: none;  
+.table-responsive-sm textarea {
+    height: 80px;
+    resize: none;
 }
 
-.contenedor .boton input[type="submit"] {
+.table-responsive-sm .boton input[type="submit"] {
     border: 0;
     margin-top: 15px;
     padding: 10px;
@@ -100,17 +97,22 @@ body {
     cursor: pointer;
 }
 
-.contenedor #mensaje_error {
+.table-responsive-sm #mensaje_error {
     margin-bottom: 20px;
     padding: 0px;
     background: #e81910;
     color: #e8e510;
+    font-weight: bold;
     text-align: center;
     font-size: 14px;
     transition: all 0.5s ease;    
 }
 
+.table-responsive-sm .titulo {
+    margin-bottom:15px;
 
+
+}
 
 
 
