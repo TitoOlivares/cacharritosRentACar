@@ -1,0 +1,182 @@
+@import url(http:fonts.googleapis.com/css?family=Open=Sans);
+@import url(menu.css);
+
+/* CCS Barra Menu */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #00316b;
+    color: #FFFFFF;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.contenedor-menu {
+    width: 98%;
+    margin: auto;
+}
+
+#logo {
+    width: 22%;
+}
+
+header .contenedor-menu {
+    display: table;
+}
+
+/* CCS Galeria Vehiculos */
+body {
+    margin: 0;
+    padding: 0;
+    background: #084B8A;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+.contenedor {
+    width: 1280px;
+    margin: 70px auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor .caja {
+    position: relative;
+    width: 300px;
+    height: 184px;
+    background: #cb9d1f;
+    margin: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.contenedor .caja .vehiculo {
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor .caja .vehiculo img {
+    max-width: 100%;
+    transition: transform 2s;
+}
+
+.contenedor .caja:hover .vehiculo img {
+    transform: scale(1.2);
+}
+
+.contenedor .caja .detalle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    transform: scaleY(0);
+    transition: transform .5s;
+}
+
+.contenedor .caja:hover .detalle {
+    transform: scaleY(1);
+}
+
+.contenedor .caja .detalle .contenido {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 15px;
+    color: #FFFFFF;
+}
+
+.contenedor .caja .detalle .contenido h2 {
+    margin: auto;
+    padding: 0;
+    font-size: 20px;
+    color: #cb9d1f;
+}
+
+.contenedor .caja .detalle .contenido p {
+    margin: auto;
+    padding: 0;
+    font-size: 12px;
+}
+
+
+/* CCS Footer */
+
+footer {
+    width: 100%;
+    bottom: 0;
+    padding-top: 20px;
+}
+
+footer .contenedor-rrss {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.copyright {
+    font-size: 15px;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+footer p {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* CCS RRSS */
+
+.sociales {
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+
+.sociales a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.sociales a:hover {
+    color: #2E9AFE;
+}
+
+
+
+
+/* CCS Responsive */
+
+@media (max-width: 900px) {
+
+    #logo {
+        width: 80%;
+    }
+
+    .contenedor {
+        width: 480px;
+    }
+
+    .contenedor .caja {
+        display: block;
+        margin: 10px auto;
+    }
+}
